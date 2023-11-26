@@ -8,12 +8,17 @@
     "note": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.3",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
   }
 }
