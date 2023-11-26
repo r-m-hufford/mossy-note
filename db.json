@@ -1,3 +1,36 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "id": 1700963627600,
+      "content": "clean up",
+      "tags": [
+        "important",
+        " home"
+      ]
+    },
+    {
+      "id": 1700963644563,
+      "content": "file paperwork",
+      "tags": [
+        "important",
+        " work"
+      ]
+    },
+    {
+      "id": 1700963661780,
+      "content": "walk dog",
+      "tags": [
+        "pet",
+        " home"
+      ]
+    },
+    {
+      "id": 1700963889256,
+      "content": "feed dog",
+      "tags": [
+        "pet",
+        " home"
+      ]
+    }
+  ]
 }

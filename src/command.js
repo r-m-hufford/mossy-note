@@ -2,6 +2,15 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { createNote, getNotes, findNotes, removeNote, removeAllNotes } from './notes.js'
 
+const listNotes = (notes) => {
+  notes.forEach(note => {
+    console.log(`ID: ${note.id}`);
+    console.log('Tags: ', note.tags.join(', '));
+    console.log('Content: ', note.content);
+    console.log('\n');
+  });
+}
+
 yargs(hideBin(process.argv))
   .command('new <note>', 'Create a new note', yargs => {
     return yargs.positional('note', {
@@ -22,7 +31,8 @@ yargs(hideBin(process.argv))
   .command('all', 'get all notes', () => {}, async (argv) => {
     const notes = await getNotes();
     console.log(": All Notes :");
-    console.log(notes);
+    listNotes(notes);
+    return notes;
   })
   .command('find <filter>', 'get matching notes', yargs => {
     return yargs.positional('filter', {
@@ -32,7 +42,7 @@ yargs(hideBin(process.argv))
   }, async (argv) => {
     const notes = await findNotes(argv.filter);
     console.log(`: Notes matching "${argv.filter}" :`);
-    console.log(notes);
+    listNotes(notes);
   })
   .command('remove <id>', 'remove a note by id', yargs => {
     return yargs.positional('id', {
